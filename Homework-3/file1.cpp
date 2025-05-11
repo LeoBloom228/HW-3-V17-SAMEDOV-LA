@@ -35,27 +35,53 @@
 
 //Task 2
 
+//#include <iostream>
+
+//int main()
+//{
+
+	//int day, month;
+
+	//std::cout << "Enter the number of a day and a number of a month: ";
+	//std::cin >> day >> month;
+
+	//int daysinMonth [] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+
+	//if (month < 1 || month > 12 || day < 1 || day > daysinMonth[month - 1])
+	//{
+		//std::cout << "Incorrect data!" << std::endl;
+		//return 1;
+
+	//}
+	//int remainingDays = daysinMonth[month - 1] - day;
+	
+	//std::cout << "This number of days is left until the end of the month: " << remainingDays << std::endl;
+
+	//return 0;
+//}
+
+//Task 3 using WHILE
+
 #include <iostream>
+#include <cmath>
 
 int main()
 {
+	int num = 10;
 
-	int day, month;
-
-	std::cout << "Enter the number of a day and a number of a month: ";
-	std::cin >> day >> month;
-
-	int daysinMonth [] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
-
-	if (month < 1 || month > 12 || day < 1 || day > daysinMonth[month - 1])
+	while (num <= 99)
 	{
-		std::cout << "Incorrect data!" << std::endl;
-		return 1;
+		int tens = num / 10;
+		int units = num % 10;
 
+		if (tens != units)
+		{
+			std::cout << num << " ";
+
+		}
+		num++;
 	}
-	int remainingDays = daysinMonth[month - 1] - day;
-	
-	std::cout << "This number of days is left until the end of the month: " << remainingDays << std::endl;
 
 	return 0;
+	
 }
