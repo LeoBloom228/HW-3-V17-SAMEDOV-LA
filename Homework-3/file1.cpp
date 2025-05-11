@@ -1,34 +1,61 @@
 //Task 1
 
+//#include <iostream>
+//#include <cmath>
+//#include <iomanip>
+
+//int main()
+
+//{
+	//double x, y;
+
+	//std::cout << "Input coordinates of the point (x,y): ";
+	//std::cin >> x >> y;
+
+	//if (x > -15 && x < 0 && y > -15 && y < 0)
+	//{
+		//std::cout << "No" << std::endl;
+
+	//}
+
+	//else if (x < -15 || x > 0 || y < -15 || y > 0)
+	//{
+		//std::cout << "Yes" << std::endl;
+
+	//}
+	//else
+	//{
+		//std::cout << "On border" << std::endl;
+
+	//}
+
+
+	//return 0;
+//}
+
+//Task 2
+
 #include <iostream>
-#include <cmath>
-#include <iomanip>
 
 int main()
-
 {
-	double x, y;
 
-	std::cout << "Input coordinates of the point (x,y): ";
-	std::cin >> x >> y;
+	int day, month;
 
-	if (x > -15 && x < 0 && y > -15 && y < 0)
+	std::cout << "Enter the number of a day and a number of a month: ";
+	std::cin >> day >> month;
+
+	int daysinMonth [] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+
+	if (month < 1 || month > 12 || day < 1 || day > daysinMonth[month - 1])
 	{
-		std::cout << "No" << std::endl;
+		std::cout << "Incorrect data!" << std::endl;
+		return 1;
 
 	}
-
-	else if (x < -15 || x > 0 || y < -15 || y > 0)
-	{
-		std::cout << "Yes" << std::endl;
-
-	}
-	else
-	{
-		std::cout << "On border" << std::endl;
-
-	}
-
+	int remainingDays = daysinMonth[month - 1] - day;
+	
+	std::cout << "This number of days is left until the end of the month: " << remainingDays << std::endl;
 
 	return 0;
 }
