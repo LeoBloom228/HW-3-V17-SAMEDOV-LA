@@ -89,24 +89,45 @@
 
 //Task 3 using DO WHILE
 
+//#include <iostream>
+//#include <cmath>
+//#include <iomanip>
+
+//int main() 
+//{
+	//int num = 10;      
+
+	//do 
+	//{
+		//int firstDigit = num / 10;     
+		//int secondDigit = num % 10;    
+
+		//if (firstDigit != secondDigit)
+			//std::cout << num << std::endl;       
+
+		//num++;
+	//} 
+	//while (num <= 99);                
+
+	//return 0;
+//}
+
+//Task 3 using FOR
+
 #include <iostream>
 #include <cmath>
 #include <iomanip>
 
 int main() 
 {
-	int num = 10;      
-
-	do 
-	{
-		int firstDigit = num / 10;     
-		int secondDigit = num % 10;    
+	for (int num = 10; num <= 99; ++num) 
+	{  
+		int firstDigit = num / 10;          
+		int secondDigit = num % 10;         
 
 		if (firstDigit != secondDigit)
-			std::cout << num << std::endl;       
-
-		num++;
-	} while (num <= 99);                
+			std::cout << num << std::endl;           
+	}
 
 	return 0;
 }
