@@ -114,19 +114,44 @@
 
 //Task 3 using FOR
 
+//#include <iostream>
+//#include <cmath>
+//#include <iomanip>
+
+//int main() 
+//{
+	//for (int num = 10; num <= 99; ++num) 
+	//{  
+		//int firstDigit = num / 10;          
+		//int secondDigit = num % 10;         
+
+		//if (firstDigit != secondDigit)
+			//std::cout << num << std::endl;           
+	//}
+
+	//return 0;
+//}
+
+//Task 4
+
 #include <iostream>
 #include <cmath>
 #include <iomanip>
 
 int main() 
 {
-	for (int num = 10; num <= 99; ++num) 
-	{  
-		int firstDigit = num / 10;          
-		int secondDigit = num % 10;         
+	
+	int numbers[] = { 1, 6, 2, 7, 3, 8, 4, 9 };
+	int repeats[] = { 1, 1, 2, 2, 3, 3, 4, 4 }; 
 
-		if (firstDigit != secondDigit)
-			std::cout << num << std::endl;           
+	int size = sizeof(numbers) / sizeof(numbers[0]);
+
+	for (int i = 0; i < size; i++) {
+		for (int j = 0; j < repeats[i]; j++) {
+			std::cout << numbers[i];
+			if (j < repeats[i] - 1) std::cout << "  ";
+		}
+		std::cout << std::endl;
 	}
 
 	return 0;
