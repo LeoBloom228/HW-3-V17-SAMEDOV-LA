@@ -159,52 +159,98 @@
 
 //Task 5
 
+//#include <iostream>
+//#include <cmath>
+//#include <iomanip>
+
+//bool computeY(double x, double& y) 
+//{
+	//if (fabs(x * x - 2) < 1e-6) 
+	//{
+		
+		//return false;
+	//}
+	//if (x * x * x - 1 < 0) 
+	//{
+		
+		//return false;
+	//}
+
+	//y = (x + 4) / (x * x - 2) + sqrt(x * x * x - 1);
+	//return true;
+//}
+
+//int main() 
+//{
+	//double a, b, h;
+	//std::cout << "Input a: ";
+	//std::cin >> a;
+	//std::cout << "Input b: ";
+	//std::cin >> b;
+	//std::cout << "Enter h: ";
+	//std::cin >> h;
+
+	//std::cout << std::fixed << std::setprecision(4);
+	//std::cout << "\n  x\t\t y\n";
+	//std::cout << "-------------------------\n";
+
+	//for (double x = a; x <= b; x += h) 
+	//{
+		//double y;
+		//if (computey(x, y)) 
+		//{
+			//std::cout << std::setw(6) << x << "\t " << std::setw(8) << y << std::endl;
+		//}
+		// 
+		//{
+			//std::cout << std::setw(6) << x << "\t " << "function is not defined" << std::endl;
+		//}
+	//}
+
+	//return 0;
+//}
+
+//Task 6
+
 #include <iostream>
 #include <cmath>
 #include <iomanip>
 
-bool computeY(double x, double& y) 
+// Helper function for calculating the y value
+double computeY(double x, double a, double b, double c) 
 {
-	if (fabs(x * x - 2) < 1e-6) 
-	{
-		
-		return false;
-	}
-	if (x * x * x - 1 < 0) 
-	{
-		
-		return false;
-	}
-
-	y = (x + 4) / (x * x - 2) + sqrt(x * x * x - 1);
-	return true;
+	if (x < 93)
+		return a + b * x;
+	else if (x <= 120)
+		return b - a * c;
+	else
+		return a * b * x;
 }
 
 int main() 
 {
-	double a, b, h;
-	std::cout << "Input a: ";
-	std::cin >> a;
-	std::cout << "Input b: ";
-	std::cin >> b;
-	std::cout << "Enter h: ";
+	double a, b, c;
+	double x_start, x_end, h;
+
+	// Entering parameters
+	std::cout << "Please, enter parameters a, b, c: ";
+	std::cin >> a >> b >> c;
+
+	// Entering x range and step
+	std::cout << "Input the start of x: ";
+	std::cin >> x_start;
+	std::cout << "Input the end x: ";
+	std::cin >> x_end;
+	std::cout << "Input step h: ";
 	std::cin >> h;
 
 	std::cout << std::fixed << std::setprecision(4);
-	std::cout << "\n  x\t\t y\n";
-	std::cout << "-------------------------\n";
+	std::cout << "\n   x\t\t y\n";
+	std::cout << "-----------------------\n";
 
-	for (double x = a; x <= b; x += h) 
-	{
-		double y;
-		if (computeY(x, y)) 
-		{
-			std::cout << std::setw(6) << x << "\t " << std::setw(8) << y << std::endl;
-		}
-		else 
-		{
-			std::cout << std::setw(6) << x << "\t " << "Function is not defined" << std::endl;
-		}
+	for (double x = x_start; x <= x_end; x += h) {
+		double y = computeY(x, a, b, c);
+		std::cout << std::setw(6) << x << "\t " << std::setw(8) << y << std::endl;
 	}
 
 	return 0;
