@@ -134,24 +134,77 @@
 
 //Task 4
 
+//#include <iostream>
+//#include <cmath>
+//#include <iomanip>
+
+//int main() 
+//{
+	
+	//int numbers[] = { 1, 6, 2, 7, 3, 8, 4, 9 };
+	//int repeats[] = { 1, 1, 2, 2, 3, 3, 4, 4 }; 
+
+	//int size = sizeof(numbers) / sizeof(numbers[0]);
+
+	//for (int i = 0; i < size; i++) {
+		//for (int j = 0; j < repeats[i]; j++) {
+			//std::cout << numbers[i];
+			//if (j < repeats[i] - 1) std::cout << "  ";
+		//}
+		//std::cout << std::endl;
+	//}
+
+	//return 0;
+//}
+
+//Task 5
+
 #include <iostream>
 #include <cmath>
 #include <iomanip>
 
+bool computeY(double x, double& y) 
+{
+	if (fabs(x * x - 2) < 1e-6) 
+	{
+		
+		return false;
+	}
+	if (x * x * x - 1 < 0) 
+	{
+		
+		return false;
+	}
+
+	y = (x + 4) / (x * x - 2) + sqrt(x * x * x - 1);
+	return true;
+}
+
 int main() 
 {
-	
-	int numbers[] = { 1, 6, 2, 7, 3, 8, 4, 9 };
-	int repeats[] = { 1, 1, 2, 2, 3, 3, 4, 4 }; 
+	double a, b, h;
+	std::cout << "Input a: ";
+	std::cin >> a;
+	std::cout << "Input b: ";
+	std::cin >> b;
+	std::cout << "Enter h: ";
+	std::cin >> h;
 
-	int size = sizeof(numbers) / sizeof(numbers[0]);
+	std::cout << std::fixed << std::setprecision(4);
+	std::cout << "\n  x\t\t y\n";
+	std::cout << "-------------------------\n";
 
-	for (int i = 0; i < size; i++) {
-		for (int j = 0; j < repeats[i]; j++) {
-			std::cout << numbers[i];
-			if (j < repeats[i] - 1) std::cout << "  ";
+	for (double x = a; x <= b; x += h) 
+	{
+		double y;
+		if (computeY(x, y)) 
+		{
+			std::cout << std::setw(6) << x << "\t " << std::setw(8) << y << std::endl;
 		}
-		std::cout << std::endl;
+		else 
+		{
+			std::cout << std::setw(6) << x << "\t " << "Function is not defined" << std::endl;
+		}
 	}
 
 	return 0;
