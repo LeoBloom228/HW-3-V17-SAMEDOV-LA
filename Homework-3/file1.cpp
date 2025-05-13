@@ -62,26 +62,51 @@
 
 //Task 3 using WHILE
 
+//#include <iostream>
+//#include <cmath>
+//#include <iomanip>
+
+//int main()
+//{
+	//int num = 10;
+
+	//while (num <= 99)
+	//{
+		//int tens = num / 10;
+		//int units = num % 10;
+
+		//if (tens != units)
+		//{
+			//std::cout << num << " ";
+
+		//}
+		//num++;
+	//}
+
+	//return 0;
+	
+//}
+
+//Task 3 using DO WHILE
+
 #include <iostream>
 #include <cmath>
+#include <iomanip>
 
-int main()
+int main() 
 {
-	int num = 10;
+	int num = 10;      
 
-	while (num <= 99)
+	do 
 	{
-		int tens = num / 10;
-		int units = num % 10;
+		int firstDigit = num / 10;     
+		int secondDigit = num % 10;    
 
-		if (tens != units)
-		{
-			std::cout << num << " ";
+		if (firstDigit != secondDigit)
+			std::cout << num << std::endl;       
 
-		}
 		num++;
-	}
+	} while (num <= 99);                
 
 	return 0;
-	
 }
